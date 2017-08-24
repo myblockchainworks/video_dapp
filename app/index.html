@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Youtube Channel Manager</title>
+  <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
+  <link href="./app.css" rel='stylesheet' type='text/css'>
+  <script src="./app.js"></script>
+</head>
+<body>
+  <h1>Youtube Channel Manager - Receiver</h1>
+
+  <div style="float:right;">
+    <div id="firstName"></div>
+    <div id="lastName"></div>
+    <div id="email"></div>
+    <div id="myAddress"></div>
+    <br>
+  </div>
+
+  <br><br>
+  <div id ="channelPage">
+      <table id="channels">
+          <tr>
+              <th>#</th>
+              <th>Channel Name</th>
+              <th>Donor</th>
+              <th>Start Date</th>
+              <th>End Date</th>
+              <th>Price for Duration</th>
+              <th>Price per Post</th>
+              <th>Actions</th>
+          </tr>
+      </table>
+      <br>
+      <div id="channelCountDiv">
+        <span>Total Channels : </span> <span id="channelCount"></span>
+      </div>
+      <br>
+      <div>
+        <h2>Add New Channel</h2>
+        <br><label style="width: 150px;" for="channelName">Channel Name:</label><input type="text" id="channelName" placeholder="e.g., News7 Tamil"></input>
+        <br><label style="width: 150px;" for="channelUrl">Channel URL:</label><input type="text" id="channelUrl" placeholder="e.g., https://www.youtube.com/user/news7tamil"></input>
+        <br><label style="width: 150px;" for="donorAddress">Donor:</label><input type="text" id="donorAddress" placeholder="e.g., 0xf52c7c669a07b1da67e7caa5c3f387f9c4511ebf"></input>
+        <br><label style="width: 150px;" for="startDate">Contract Start Date:</label><input type="date" id="startDate"></input>
+        <br><label style="width: 150px;" for="endDate">Contract End Date:</label><input type="date" id="endDate"></input>
+        <br><label style="width: 150px;" for="priceForDuration">Price for Duration:</label><input type="number" id="priceForDuration" placeholder="e.g., 10"></input>
+        <br><label style="width: 150px;" for="priceForPost">Price per Post:</label><input type="number" id="priceForPost" placeholder="e.g., 1"></input>
+        <br><br><button id="add" onclick="addNewChannel()">Add Channel</button>
+      </div>
+  </div>
+
+  <div id ="postPage" style="display:none;">
+    <h3 style="margin-top:5px;margin-bottom:5px;">Channel Name : <span id="selectedChannelName"></span><button style="float:right" onclick="showChannels();">Back to Channels</button></h3>
+    <table id="posts">
+        <tr>
+            <th>#</th>
+            <th>Post Name</th>
+            <th>Post URL</th>
+            <th>Post Price Received</th>
+        </tr>
+    </table>
+    <br>
+    <span>Total Posts : </span> <span id="postCount"></span>
+    <br><br>
+    <div id="addNewPostDiv">
+      <h2>Add New Post</h2>
+      <br><label style="width: 150px;" for="postName">Post Name:</label><input type="text" id="postName" placeholder="e.g., News @ 8PM | 08.02.17"></input>
+      <br><label style="width: 150px;" for="postUrl">Post URL:</label><input type="text" id="postUrl" placeholder="e.g., https://www.youtube.com/watch?v=PrHi9zE-yWA"></input>
+      <br><br><button id="addPost" onclick="addNewPost()">Add Post</button>
+    </div>
+  </div>
+  <span id="status"></span>
+  <br><br>
+</body>
+</html>
